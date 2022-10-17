@@ -9,7 +9,7 @@
     <h1>FavWord Generator</h1>
   </div>
   <div align="center">
-    <form th:action = "@{/generate}" method = "post" th:object = "${query}">
+    <form th:action = "@{/generated}" method = "post" th:object = "${query}">
       <table>
         <tr>
          <td><input type="text" th:field="*{query}"/></td>

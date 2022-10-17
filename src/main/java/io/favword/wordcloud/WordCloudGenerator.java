@@ -33,6 +33,6 @@ public class WordCloudGenerator {
         wordCloud.setColorPalette(new LinearGradientColorPalette(Color.RED, Color.BLUE, Color.GREEN, 30, 30));
         wordCloud.setFontScalar( new SqrtFontScalar(15, 50));
         wordCloud.build(wordFrequencies);
-        wordCloud.writeToFile("/Users/quinnoneal/SpringApps/favword-generator/src/favword_wordcloud.png");
+        wordCloud.writeToFile("/Users/quinnoneal/SpringApps/favword-generator/src/main/resources/img/favword_wordcloud.png");
     }
 }

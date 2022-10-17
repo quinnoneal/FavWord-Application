@@ -10,7 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,15 +27,12 @@ public class ApplicationController {
         return "index";
     }
 
-    @RequestMapping(value = "/generate", method = RequestMethod.POST)
-    public String generate(@ModelAttribute("query") Query query) throws IOException {
+    @RequestMapping(value = "/generated", method = RequestMethod.POST)
+    public String generate(@ModelAttribute("query") Query query) throws IOException, InterruptedException {
         WordCloudGenerator.generateImage(lyricsService.fetchLyrics(query.getQuery()));
+        Thread.sleep(3000);
         return "image";
     }
 
-    @GetMapping(value = "/image", produces = MediaType.IMAGE_PNG_VALUE)
-    public @ResponseBody byte[] getImage() throws IOException {
-        InputStream in = getClass().getResourceAsStream("/Users/quinnoneal/SpringApps/favword-generator/src/favword_wordcloud.png");
-        return IOUtils.toByteArray(in);
-    }
+
 }
