@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LyricFormatter {
+    private static final int MAX_STRING_LENGTH = 12000;
 
     // takes in raw unformatted lyrics
     // removes all substrings that start with "[" and end with "]"
@@ -23,8 +24,8 @@ public class LyricFormatter {
             }
         }
         String temp = String.join(" ", list);
-        if (temp.length() > 12000) {
-            return temp.substring(0, 12000);
+        if (temp.length() > MAX_STRING_LENGTH) {
+            return temp.substring(0, MAX_STRING_LENGTH);
         }
         return temp;
     }
