@@ -9,7 +9,7 @@
     <h1>FavWord Cloud</h1>
 </div>
 <div align="center">
-    <img th:src="@{img/favword_wordcloud.png}" alt=""/>
+    <img th:src="@{https://quickchart.io/wordcloud(maxNumWords=2000, minWordLength=4, format=png, text=${lyrics.lyrics})}" alt=""/>
 </div>
 </body>
 </html>
