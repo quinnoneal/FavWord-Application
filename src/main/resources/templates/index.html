@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>FavWord Generator</title>
+    <link th:href="@{http://fonts.googleapis.com/css?family=Calibri}"
+          rel='stylesheet' type='text/css' />
+    <style>
+        body {
+            font-family: 'Calibri', serif;
+            font-size: 11pt;
+        }
+    </style>
 </head>
-<body>
+<body th:background="@{img/Apple Music Colors Blur 5K8160311542.jpeg}">
   <div align="center">
     <h1>FavWord Generator</h1>
   </div>
@@ -12,11 +20,12 @@
     <form th:action = "@{/generated}" method = "post" th:object = "${query}">
       <table>
         <tr>
-         <td><input type="text" th:field="*{query}"/></td>
+            <input type="text" th:field="*{query}"/>
         </tr>
         <tr>
-          <td></td>
-          <td><input type="submit" value="Generate"/></td>
+            <div align="center">
+                <td><input type="submit" value="Generate"/></td>
+            </div>
         </tr>
       </table>
    </form>
