@@ -11,5 +11,5 @@ Author: Alioth LLC <br/>
 License: GNU Affero General Public License v3.0 <br/>
 Link: https://quickchart.io/documentation/word-cloud-api/ <br/>
 
-##Deployed on Heroku
+## Deployed on Heroku
 https://favword-generator.herokuapp.com/
