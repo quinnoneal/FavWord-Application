@@ -11,5 +11,16 @@
 <div align="center">
     <img th:src="@{https://quickchart.io/wordcloud(removeStopwords=true, maxNumWords=2000, minWordLength=4, format=png, text=${lyrics.lyrics})}" alt=""/>
 </div>
+<div align="center">
+    <form th:action = "@{/}" method = "get">
+        <table>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Generate Another WordCloud"/></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
 </body>
 </html>

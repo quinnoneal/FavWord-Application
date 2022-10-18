@@ -33,10 +33,4 @@ public class ApplicationController {
         return "image";
     }
 
-    @RequestMapping(value = "/image", method = RequestMethod.GET)
-    public String showImage() {
-        return "image";
-    }
-
-
 }
