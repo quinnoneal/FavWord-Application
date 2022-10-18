@@ -22,7 +22,11 @@ public class LyricFormatter {
                 list.set(i, list.get(i).replaceAll("\\p{Punct}", ""));
             }
         }
-        return String.join(" ", list);
+        String temp = String.join(" ", list);
+        if (temp.length() > 12000) {
+            return temp.substring(0, 12000);
+        }
+        return temp;
     }
 
 }

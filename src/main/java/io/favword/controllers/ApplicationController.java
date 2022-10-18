@@ -15,7 +15,7 @@ public class ApplicationController {
     @Autowired
     private LyricsService lyricsService;
 
-    @RequestMapping(value = "/generate", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String takeInRequest(Model model) throws IOException {
         // generate favword cloud
         Query query = new Query();
@@ -26,6 +26,7 @@ public class ApplicationController {
     @RequestMapping(value = "/generated", method = RequestMethod.POST)
     public String generate(@ModelAttribute("query") Query query, Model model) throws IOException, InterruptedException {
         Lyrics lyrics = new Lyrics();
+        model.addAttribute("query", query);
         lyrics.setLyrics(lyricsService.fetchLyrics(query.getQuery()));
         System.out.println(lyricsService.fetchLyrics(query.getQuery()));
         model.addAttribute("lyrics", lyrics);
