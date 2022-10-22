@@ -1,4 +1,4 @@
-package io.favword;
+package io.favword.lyrics;
 
 public class Lyrics {
     private String lyrics;

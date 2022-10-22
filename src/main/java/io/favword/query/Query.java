@@ -1,4 +1,4 @@
-package io.favword;
+package io.favword.query;
 
 public class Query {
     private String query;
