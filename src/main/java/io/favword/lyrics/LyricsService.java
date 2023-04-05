@@ -8,12 +8,12 @@ import java.io.IOException;
 @Service
 public class LyricsService {
     // Genius Lyrics API Object, responsible for retrieving raw lyrics scraped straight from lyric page
-    private final GLA gla = new GLA();
+    private final GLA gla;
     // cut off length for string (increase of length provides more data but decreases performance significantly)
     private final int MAX_STRING_LENGTH = 15000;
 
-    public LyricsService() {
-
+    public LyricsService(GLA gla) {
+        this.gla = gla;
     }
 
     /**
