@@ -8,7 +8,11 @@ import org.springframework.context.annotation.Configuration;
 public class GLAConfig {
 
     @Bean
+<<<<<<< HEAD
     public GLA glaConfig() {
+=======
+    public GLA remoteGLA() {
+>>>>>>> config
         return new GLA();
     }
 }
