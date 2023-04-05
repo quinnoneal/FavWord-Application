@@ -1,6 +1,7 @@
 package io.favword.lyrics;
 
 import core.GLA;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ public class LyricsService {
     // cut off length for string (increase of length provides more data but decreases performance significantly)
     private final int MAX_STRING_LENGTH = 15000;
 
+    @Autowired
     public LyricsService(GLA gla) {
         this.gla = gla;
     }
