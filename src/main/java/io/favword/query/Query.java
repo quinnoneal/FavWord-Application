@@ -1,17 +1,10 @@
 package io.favword.query;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class Query {
     private String query;
-
-    public Query() {
-        this.query = query;
-    }
-
-    public void setQuery(String query) {
-        this.query = query;
-    }
-
-    public String getQuery() {
-        return query;
-    }
 }
