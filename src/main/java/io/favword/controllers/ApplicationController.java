@@ -1,7 +1,5 @@
 package io.favword.controllers;
 
-import io.favword.lyrics.Lyrics;
-import io.favword.query.Query;
 import io.favword.lyrics.LyricsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,16 +16,15 @@ public class ApplicationController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String takeInRequest(Model model) throws IOException {
         // get user query
-        Query query = new Query();
+        String query = "";
         model.addAttribute("query", query);
         return "index";
     }
 
     @RequestMapping(value = "/generated", method = RequestMethod.POST)
-    public String generate(@ModelAttribute("query") Query query, Model model) throws IOException, InterruptedException {
-        Lyrics lyrics = new Lyrics();
+    public String generate(@ModelAttribute("query") String query, Model model) throws IOException, InterruptedException {
         // using lyric service to retrieve a string of space-separated words used in artists' hits
-        lyrics.setLyrics(lyricsService.getLyrics(query.getQuery()));
+        String lyrics = lyricsService.getLyrics(query);
         model.addAttribute("lyrics", lyrics);
         // "image" template displays an embedded quick chart word cloud
         // within the url, parameter of "text" is set to the lyrics attribute
